@@ -1,0 +1,16 @@
+name: Update on New Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Run Update Script
+        run: ./scripts/update_script.sh
